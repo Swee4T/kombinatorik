@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kombinatorik-Explorer Info</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Kombinatorik-Explorer Info</h1>
+        <nav>
+            <a href="index.html" class="btn">Explorer</a>
+            <a href="info.html" class="btn active">Info</a>
+            <a href="cheatsheet.html" class="btn">Cheatsheet</a>
+        </nav>
+        <div class="content-section">
+            <h2>Übersicht der kombinatorischen Konzepte</h2>
+            
+            <div class="concept-buttons">
+                <button class="btn concept-btn" onclick="showConcept('variation-mit')">Variation mit Wiederholung</button>
+                <button class="btn concept-btn" onclick="showConcept('variation-ohne')">Variation ohne Wiederholung</button>
+                <button class="btn concept-btn" onclick="showConcept('kombination-mit')">Kombination mit Wiederholung</button>
+                <button class="btn concept-btn" onclick="showConcept('kombination-ohne')">Kombination ohne Wiederholung</button>
+                <button class="btn concept-btn" onclick="showConcept('permutation')">Permutation</button>
+            </div>
+
+            <div id="variation-mit" class="concept-info" style="display:none;">
+                <h3>Variation mit Wiederholung</h3>
+                <p class="formula">\[ n^k \]</p>
+                <p>Beschreibung: Bei einer Variation mit Wiederholung wählst du k Elemente aus n Möglichkeiten aus. Die Reihenfolge ist wichtig, und du darfst Elemente mehrfach verwenden.</p>
+                <p>Beispiel: Ein 4-stelliger PIN-Code mit Ziffern von 0-9. Hier ist n=10 und k=4.</p>
+            </div>
+
+            <div id="variation-ohne" class="concept-info" style="display:none;">
+                <h3>Variation ohne Wiederholung</h3>
+                <p class="formula">\[ \frac{n!}{(n-k)!} \]</p>
+                <p>Beschreibung: Bei einer Variation ohne Wiederholung wählst du k Elemente aus n Möglichkeiten aus. Die Reihenfolge ist wichtig, und jedes Element darf nur einmal vorkommen.</p>
+                <p>Beispiel: Die ersten drei Plätze in einem Rennen mit 10 Läufern. Hier ist n=10 und k=3.</p>
+            </div>
+
+            <div id="kombination-mit" class="concept-info" style="display:none;">
+                <h3>Kombination mit Wiederholung</h3>
+                <p class="formula">\[ \binom{n+k-1}{k} \]</p>
+                <p>Beschreibung: Bei einer Kombination mit Wiederholung wählst du k Elemente aus n Möglichkeiten aus. Die Reihenfolge ist egal, aber du darfst Elemente mehrfach verwenden.</p>
+                <p>Beispiel: Auswahl von 3 Eiskugeln aus 5 Sorten, wobei Wiederholungen erlaubt sind. Hier ist n=5 und k=3.</p>
+            </div>
+
+            <div id="kombination-ohne" class="concept-info" style="display:none;">
+                <h3>Kombination ohne Wiederholung</h3>
+                <p class="formula">\[ \binom{n}{k} \]</p>
+                <p>Beschreibung: Bei einer Kombination ohne Wiederholung wählst du k Elemente aus n Möglichkeiten aus. Die Reihenfolge ist egal, und jedes Element darf nur einmal vorkommen.</p>
+                <p>Beispiel: Auswahl von 3 Personen aus einer 10-köpfigen Gruppe. Hier ist n=10 und k=3.</p>
+            </div>
+
+            <div id="permutation" class="concept-info" style="display:none;">
+                <h3>Permutation</h3>
+                <p class="formula">\[ n! \]</p>
+                <p>Beschreibung: Eine Permutation ordnet alle n Elemente an, wobei jedes Element genau einmal vorkommt.</p>
+                <p>Beispiel: Alle möglichen Anordnungen von 5 Personen in einer Reihe. Hier ist n=5.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showConcept(conceptId) {
+            // Verstecke alle Konzepte
+            document.querySelectorAll('.concept-info').forEach(el => el.style.display = 'none');
+            // Zeige das ausgewählte Konzept
+            document.getElementById(conceptId).style.display = 'block';
+            // Aktualisiere MathJax-Rendering
+            MathJax.typesetPromise().then(() => {
+                console.log('Formeln wurden neu gerendert');
+            }).catch((err) => console.log('Fehler beim Rendern der Formeln:', err));
+        }
+
+        // Initial MathJax-Rendering
+        MathJax.startup.promise.then(() => {
+            showConcept('variation-mit');  // Zeige das erste Konzept standardmäßig
+        });
+    </script>
+</body>
+</html>

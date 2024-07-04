@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kombinatorik Cheatsheet</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Kombinatorik Cheatsheet</h1>
+        <nav>
+    		<a href="index.html" class="btn">Explorer</a>
+    		<a href="info.html" class="btn">Info</a>
+    		<a href="cheatsheet.html" class="btn active">Cheatsheet</a>
+		</nav>
+        <div class="content-section">
+            <h2>Übersicht der kombinatorischen Konzepte</h2>
+            <table class="cheatsheet-table">
+                <tr>
+                    <th>Konzept</th>
+                    <th>Formel</th>
+                    <th>Beschreibung</th>
+                    <th>Beispiel</th>
+                </tr>
+                <tr>
+                    <td>Variation mit Wiederholung</td>
+                    <td>\( n^k \)</td>
+                    <td>Auswahl von k aus n mit Reihenfolge und Wiederholung</td>
+                    <td>4-stelliger PIN-Code (n=10, k=4)</td>
+                </tr>
+                <tr>
+                    <td>Variation ohne Wiederholung</td>
+                    <td>\( \frac{n!}{(n-k)!} \)</td>
+                    <td>Auswahl von k aus n mit Reihenfolge, ohne Wiederholung</td>
+                    <td>Podiumsplätze bei 10 Läufern (n=10, k=3)</td>
+                </tr>
+                <tr>
+                    <td>Kombination mit Wiederholung</td>
+                    <td>\( \binom{n+k-1}{k} \)</td>
+                    <td>Auswahl von k aus n ohne Reihenfolge, mit Wiederholung</td>
+                    <td>3 Eiskugeln aus 5 Sorten (n=5, k=3)</td>
+                </tr>
+                <tr>
+                    <td>Kombination ohne Wiederholung</td>
+                    <td>\( \binom{n}{k} \)</td>
+                    <td>Auswahl von k aus n ohne Reihenfolge und Wiederholung</td>
+                    <td>3 aus 10 Personen auswählen (n=10, k=3)</td>
+                </tr>
+                <tr>
+                    <td>Permutation</td>
+                    <td>\( n! \)</td>
+                    <td>Anordnung von n Elementen</td>
+                    <td>Anordnung von 5 Personen (n=5)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
