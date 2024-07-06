@@ -125,8 +125,8 @@ function createCalculator(type) {
             calculatorHtml = `
                 <h3>Rechner: ${type}</h3>
                 <div>
-                    <input type="number" id="n-input" placeholder="n">
                     <input type="number" id="k-input" placeholder="k">
+                    <input type="number" id="n-input" placeholder="n">
                     <button onclick="calculate('${type}')">Berechnen</button>
                 </div>
                 <p id="calc-result"></p>
