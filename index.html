@@ -12,6 +12,7 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+    <button id="theme-toggle">Toggle Theme</button>
     <div class="container">
     <h1 class="glitch" data-text="Kombinatorik">Kombinatorik</h1>
     <nav>
@@ -37,6 +38,19 @@
     
     <script src="flowchart.js"></script>
     <script>
+
+const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        if (body.classList.contains('light-mode')) {
+            themeToggle.textContent = 'Dark Mode';
+        } else {
+            themeToggle.textContent = 'Light Mode';
+        }
+    });
+    
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/service-worker.js')
@@ -44,7 +58,12 @@
         .catch((err) => console.log('Service worker registration failed:', err));
     });
   }
+
 </script>
 
+    <footer>
+        <a href="rechtliches.html#impressum">Impressum</a> | 
+        <a href="rechtliches.html#datenschutz">Datenschutzerklärung</a>
+    </footer>
 </body>
 </html>
