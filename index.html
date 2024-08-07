@@ -10,6 +10,18 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function applyTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        }
+        // Theme beim Laden der Seite anwenden
+        document.addEventListener('DOMContentLoaded', applyTheme);
+    </script>
 </head>
 <body>
     <button id="theme-toggle">Toggle Theme</button>
@@ -38,19 +50,6 @@
     
     <script src="flowchart.js"></script>
     <script>
-
-const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('light-mode');
-        if (body.classList.contains('light-mode')) {
-            themeToggle.textContent = 'Dark Mode';
-        } else {
-            themeToggle.textContent = 'Light Mode';
-        }
-    });
-    
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/service-worker.js')
@@ -58,12 +57,14 @@ const themeToggle = document.getElementById('theme-toggle');
         .catch((err) => console.log('Service worker registration failed:', err));
     });
   }
-
 </script>
 
     <footer>
         <a href="rechtliches.html#impressum">Impressum</a> | 
         <a href="rechtliches.html#datenschutz">Datenschutzerklärung</a>
     </footer>
+
+    <script src="theme-toggle.js"></script>
+
 </body>
 </html>
