@@ -252,6 +252,7 @@ nav .btn {
 
 .light-mode .cheatsheet-table th, .light-mode .cheatsheet-table td {
     border-color: var(--light-secondary);
+    background-color: #ffffff; /* Hintergrund auf Weiß gesetzt */
 }
 
 .light-mode .cheatsheet-table th {
