@@ -231,6 +231,45 @@ nav .btn {
     border-color: var(--light-secondary);
 }
 
+.table-container {
+    overflow-x: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .cheatsheet-table {
+        display: block;
+    }
+    
+    .cheatsheet-table thead {
+        display: none;
+    }
+    
+    .cheatsheet-table tr {
+        display: block;
+        margin-bottom: 1em;
+        border: 1px solid #ccc;
+    }
+    
+    .cheatsheet-table td {
+        display: block;
+        text-align: right;
+        padding: 0.5em;
+        position: relative;
+        padding-left: 50%;
+    }
+    
+    .cheatsheet-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+}
+
 .cheatsheet-table th, .cheatsheet-table td {
     border: 1px solid var(--neon-yellow);
     padding: 10px;
