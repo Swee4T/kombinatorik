@@ -6,23 +6,30 @@ document.addEventListener('DOMContentLoaded', () => {
     applyTheme();
 
     themeToggle.addEventListener('click', () => {
-        console.log('Theme-Toggle wurde geklickt');
-        body.classList.toggle('light-mode');
-        if (body.classList.contains('light-mode')) {
-            themeToggle.textContent = 'Dark Mode';
-            localStorage.setItem('theme', 'light');
-        } else {
-            themeToggle.textContent = 'Light Mode';
-            localStorage.setItem('theme', 'dark');
-        }
+        toggleTheme();
     });
 
-    function applyTheme() {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
+    function toggleTheme() {
+        if (body.classList.contains('light-mode')) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+    }
+
+    function setTheme(theme) {
+        if (theme === 'light') {
             body.classList.add('light-mode');
+            themeToggle.textContent = 'Dark Mode';
         } else {
             body.classList.remove('light-mode');
+            themeToggle.textContent = 'Light Mode';
         }
+        localStorage.setItem('theme', theme);
+    }
+
+    function applyTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        setTheme(savedTheme);
     }
 });
