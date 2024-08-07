@@ -114,6 +114,7 @@ nav .btn {
     padding: 1.5rem;
     margin-top: 1rem;
     text-align: center;
+    overflow: hidden;
 }
 
 .light-mode .content-section {
@@ -233,11 +234,35 @@ nav .btn {
 
 .table-container {
     overflow-x: auto;
+    margin: -1px;
+}
+
+.cheatsheet-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+.cheatsheet-table th, .cheatsheet-table td {
+    border: 1px solid var(--neon-yellow);
+    padding: 10px;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.light-mode .cheatsheet-table th, .light-mode .cheatsheet-table td {
+    border-color: var(--light-secondary);
+}
+
+.light-mode .cheatsheet-table th {
+    background-color: rgba(0, 255, 255, 0.1);
+    color: var(--light-accent);
 }
 
 @media screen and (max-width: 600px) {
     .cheatsheet-table {
         display: block;
+        margin: -1px;
     }
     
     .cheatsheet-table thead {
@@ -270,24 +295,9 @@ nav .btn {
     }
 }
 
-.cheatsheet-table th, .cheatsheet-table td {
-    border: 1px solid var(--neon-yellow);
-    padding: 10px;
-    text-align: left;
-}
-
-.light-mode .cheatsheet-table th, .light-mode .cheatsheet-table td {
-    border-color: var(--light-secondary);
-}
-
-.light-mode .cheatsheet-table th {
-    background-color: rgba(0, 255, 255, 0.1);
-    color: var(--light-accent);
-}
-
 #theme-toggle {
     position: fixed;
-    top: 20px;
+    top: 40px; /* Erhöht von 20px auf 40px */
     right: 20px;
     background: transparent;
     border: 2px solid var(--neon-yellow);
@@ -314,7 +324,7 @@ nav .btn {
 
 footer {
     position: fixed;
-    bottom: 20px;
+    bottom: 40px; /* Erhöht von 20px auf 40px */
     left: 20px;
     z-index: 1000;
 }

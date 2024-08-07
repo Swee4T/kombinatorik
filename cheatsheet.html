@@ -20,44 +20,46 @@
 		</nav>
         <div class="content-section">
             <h2>Übersicht der kombinatorischen Konzepte</h2>
-            <table class="cheatsheet-table">
-                <tr>
-                    <th>Konzept</th>
-                    <th>Formel</th>
-                    <th>Beschreibung</th>
-                    <th>Beispiel</th>
-                </tr>
-                <tr>
-                    <td>Variation mit Wiederholung</td>
-                    <td>\( n^k \)</td>
-                    <td>Auswahl von k aus n mit Reihenfolge und Wiederholung</td>
-                    <td>4-stelliger PIN-Code (n=10, k=4)</td>
-                </tr>
-                <tr>
-                    <td>Variation ohne Wiederholung</td>
-                    <td>\( \frac{n!}{(n-k)!} \)</td>
-                    <td>Auswahl von k aus n mit Reihenfolge, ohne Wiederholung</td>
-                    <td>Podiumsplätze bei 10 Läufern (n=10, k=3)</td>
-                </tr>
-                <tr>
-                    <td>Kombination mit Wiederholung</td>
-                    <td>\( \binom{n+k-1}{k} \)</td>
-                    <td>Auswahl von k aus n ohne Reihenfolge, mit Wiederholung</td>
-                    <td>3 Eiskugeln aus 5 Sorten (n=5, k=3)</td>
-                </tr>
-                <tr>
-                    <td>Kombination ohne Wiederholung</td>
-                    <td>\( \binom{n}{k} \)</td>
-                    <td>Auswahl von k aus n ohne Reihenfolge und Wiederholung</td>
-                    <td>3 aus 10 Personen auswählen (n=10, k=3)</td>
-                </tr>
-                <tr>
-                    <td>Permutation</td>
-                    <td>\( n! \)</td>
-                    <td>Anordnung von n Elementen</td>
-                    <td>Anordnung von 5 Personen (n=5)</td>
-                </tr>
-            </table>
+            <div class="table-container">
+                <table class="cheatsheet-table">
+                    <tr>
+                        <th>Konzept</th>
+                        <th>Formel</th>
+                        <th>Beschreibung</th>
+                        <th>Beispiel</th>
+                    </tr>
+                    <tr>
+                        <td data-label="Konzept">Variation mit Wiederholung</td>
+                        <td data-label="Formel">\( n^k \)</td>
+                        <td data-label="Beschreibung">Auswahl von k aus n mit Reihenfolge und Wiederholung</td>
+                        <td data-label="Beispiel">4-stelliger PIN-Code (n=10, k=4)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Konzept">Variation ohne Wiederholung</td>
+                        <td data-label="Formel">\( \frac{n!}{(n-k)!} \)</td>
+                        <td data-label="Beschreibung">Auswahl von k aus n mit Reihenfolge, ohne Wiederholung</td>
+                        <td data-label="Beispiel">Podiumsplätze bei 10 Läufern (n=10, k=3)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Konzept">Kombination mit Wiederholung</td>
+                        <td data-label="Formel">\( \binom{n+k-1}{k} \)</td>
+                        <td data-label="Beschreibung">Auswahl von k aus n ohne Reihenfolge, mit Wiederholung</td>
+                        <td data-label="Beispiel">3 Eiskugeln aus 5 Sorten (n=5, k=3)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Konzept">Kombination ohne Wiederholung</td>
+                        <td data-label="Formel">\( \binom{n}{k} \)</td>
+                        <td data-label="Beschreibung">Auswahl von k aus n ohne Reihenfolge und Wiederholung</td>
+                        <td data-label="Beispiel">3 aus 10 Personen auswählen (n=10, k=3)</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Konzept">Permutation</td>
+                        <td data-label="Formel">\( n! \)</td>
+                        <td data-label="Beschreibung">Anordnung von n Elementen</td>
+                        <td data-label="Beispiel">Anordnung von 5 Personen (n=5)</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 
