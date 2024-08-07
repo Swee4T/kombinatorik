@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
+    // Anwenden des gespeicherten Themes
+    applyTheme();
+
     themeToggle.addEventListener('click', () => {
         console.log('Theme-Toggle wurde geklickt');
         body.classList.toggle('light-mode');
@@ -22,6 +25,4 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.remove('light-mode');
         }
     }
-
-    applyTheme();
 });
