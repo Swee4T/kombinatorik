@@ -1,3 +1,4 @@
+/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap');
 
 :root {
@@ -7,22 +8,26 @@
     --dark-bg: #0a0a0a;
     --light-bg: #f0f0f0;
     --light-text: #333;
-    --light-accent: #6a5acd; /* Sanftes Lila */
-    --light-secondary: #4682b4; /* Stahlblau */
-    --light-tertiary: #20b2aa; /* Helles Meeresgrün */
+    --light-accent: #6a5acd;
+    --light-secondary: #4682b4;
+    --light-tertiary: #20b2aa;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: 'Share Tech Mono', monospace;
     background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1a2e 100%);
     color: var(--neon-yellow);
-    margin: 0;
-    padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden;
+    padding: 1rem;
+    position: relative;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -32,14 +37,16 @@ body.light-mode {
 }
 
 .container {
+    flex: 1;
     background: rgba(10, 10, 10, 0.8);
     border: 2px solid var(--neon-yellow);
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 0 20px rgba(255, 238, 0, 0.5);
     max-width: 800px;
-    width: 95%;
-    margin: 2rem auto;
+    width: calc(100% - 2rem);
+    margin: 1rem auto;
+    position: relative;
 }
 
 .light-mode .container {
@@ -83,13 +90,14 @@ nav .btn {
     color: var(--neon-cyan);
     border: 1px solid var(--neon-cyan);
     border-radius: 25px;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-decoration: none;
 }
 
 .light-mode .btn {
@@ -111,10 +119,12 @@ nav .btn {
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid var(--neon-green);
     border-radius: 15px;
-    padding: 1.5rem;
-    margin-top: 1rem;
+    padding: 2.5rem;
+    margin-top: 2rem;
     text-align: center;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .light-mode .content-section {
@@ -125,38 +135,25 @@ nav .btn {
 #questionText {
     color: var(--neon-yellow);
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin: 0;
     text-shadow: 0 0 10px var(--neon-yellow);
 }
 
 .light-mode #questionText {
     color: var(--light-accent);
-    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    text-shadow: none;
 }
 
-.btn {
-    background: transparent;
-    color: var(--neon-cyan);
-    border: 1px solid var(--neon-cyan);
-    border-radius: 25px;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Share Tech Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0.5rem;
+#questionDescription {
+    margin: 0;
+    line-height: 1.5;
 }
 
-.light-mode .btn {
-    color: var(--light-secondary);
-    border-color: var(--light-secondary);
-}
-
-.btn:hover, .light-mode .btn:hover {
-    background: rgba(0, 255, 255, 0.2);
-    box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .formula {
@@ -216,130 +213,81 @@ nav .btn {
 
 #calculator button:hover, .light-mode #calculator button:hover {
     background: rgba(0, 255, 0, 0.2);
-    box-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
 }
 
-.concept-info {
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid var(--neon-green);
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.light-mode .concept-info {
-    background: rgba(255, 255, 255, 0.9);
-    border-color: var(--light-secondary);
-}
-
-.table-container {
-    overflow-x: auto;
-    margin: -1px;
-}
-
-.cheatsheet-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 1px;
-}
-
-.cheatsheet-table th, .cheatsheet-table td {
-    border: 1px solid var(--neon-yellow);
-    padding: 10px;
-    text-align: left;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.light-mode .cheatsheet-table th, .light-mode .cheatsheet-table td {
-    border-color: var(--light-secondary);
-    background-color: #ffffff; /* Hintergrund auf Weiß gesetzt */
-}
-
-.light-mode .cheatsheet-table th {
-    background-color: rgba(0, 255, 255, 0.1);
-    color: var(--light-accent);
-}
-
-@media screen and (max-width: 600px) {
-    .cheatsheet-table {
-        display: block;
-        margin: -1px;
-    }
+/* Theme Toggle Component */
+.theme-toggle {
+    --toggle-size: 2.5rem;
+    --toggle-padding: 0.5rem;
     
-    .cheatsheet-table thead {
-        display: none;
-    }
-    
-    .cheatsheet-table tr {
-        display: block;
-        margin-bottom: 1em;
-        border: 1px solid #ccc;
-    }
-    
-    .cheatsheet-table td {
-        display: block;
-        text-align: right;
-        padding: 0.5em;
-        position: relative;
-        padding-left: 50%;
-    }
-    
-    .cheatsheet-table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 6px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        text-align: left;
-        font-weight: bold;
-    }
-}
-
-#theme-toggle {
     position: fixed;
-    top: 40px; /* Erhöht von 20px auf 40px */
-    right: 20px;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    /* Mobile: Nur Icon */
+    height: var(--toggle-size);
+    width: var(--toggle-size);
+    padding: var(--toggle-padding);
+    border-radius: 50%;
+    
+    /* Styling */
     background: transparent;
     border: 2px solid var(--neon-yellow);
     color: var(--neon-yellow);
-    padding: 10px 15px;
-    border-radius: 20px;
     cursor: pointer;
     font-family: 'Share Tech Mono', monospace;
     transition: all 0.3s ease;
 }
 
-.light-mode #theme-toggle {
+.theme-toggle:hover {
+    background: rgba(255, 238, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 238, 0, 0.5);
+}
+
+.theme-toggle__icon {
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle__text {
+    display: none; /* Initially hidden on mobile */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Light mode styles */
+.light-mode .theme-toggle {
     border-color: var(--light-accent);
     color: var(--light-accent);
 }
 
-#theme-toggle:hover {
-    background: rgba(255, 238, 0, 0.2);
-}
-
-.light-mode #theme-toggle:hover {
+.light-mode .theme-toggle:hover {
     background: rgba(106, 90, 205, 0.1);
+    box-shadow: 0 0 10px rgba(106, 90, 205, 0.3);
 }
 
-footer {
-    position: fixed;
-    bottom: 40px; /* Erhöht von 20px auf 40px */
-    left: 20px;
-    z-index: 1000;
+/* Tablet+ styles */
+@media (min-width: 768px) {
+    .theme-toggle {
+        width: auto;
+        padding: var(--toggle-padding) calc(var(--toggle-padding) * 2);
+        border-radius: calc(var(--toggle-size) / 2);
+    }
+    
+    .theme-toggle__text {
+        display: block;
+    }
 }
 
-footer a {
-    color: var(--neon-yellow);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.light-mode footer a {
-    color: var(--light-accent);
-}
-
-footer a:hover {
-    text-decoration: underline;
+/* Hover animation */
+.theme-toggle:hover .theme-toggle__icon {
+    transform: rotate(-15deg);
 }

@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,27 +7,36 @@
     <link rel="apple-touch-icon" href="icon-192x192.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta description=" Kombinatorik, kombinatorische Konzepte erklärt">
     <title>Kombinatorik-Explorer</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="theme-toggle.js" defer></script>
 </head>
 <body>
-    <button id="theme-toggle">Toggle Theme</button>
+    <button class="theme-toggle">
+        <span class="theme-toggle__icon">
+            <i class="fas fa-moon"></i>
+        </span>
+        <span class="theme-toggle__text">Dark Mode</span>
+    </button>
     <div class="container">
-    <h1 class="glitch" data-text="Kombinatorik">Kombinatorik</h1>
-    <nav>
-    <a href="index.html" class="btn active">Rechner</a>
-    <a href="info.html" class="btn">Info</a>
-    <a href="cheatsheet.html" class="btn">Cheatsheet</a>
-    </nav>
-        <div class="path" id="path">Dein kombinatorischer Weg: </div>
+        <h1 class="glitch" data-text="Kombinatorik">Kombinatorik</h1>
+        <nav>
+            <a href="index.html" class="btn active">Rechner</a>
+            <a href="info.html" class="btn">Info</a>
+            <a href="cheatsheet.html" class="btn">Cheatsheet</a>
+        </nav>
+        <div class="path" id="path">Dein kombinatorischer Weg: Beginn</div>
         <div class="content-section" id="mainContainer">
             <h2 id="questionText">Ist die Reihenfolge relevant?</h2>
             <p id="questionDescription">Entscheide, ob die Reihenfolge der Elemente in deinem Problem eine Rolle spielt.</p>
-            <button class="btn" id="btnYes">Ja, mit Reihenfolge</button>
-            <button class="btn" id="btnNo">Nein, ohne Reihenfolge</button>
+            <div class="button-group">
+                <button class="btn" id="btnYes">Ja, mit Reihenfolge</button>
+                <button class="btn" id="btnNo">Nein, ohne Reihenfolge</button>
+            </div>
             <div id="result" style="display: none;">
                 <h2 id="resultText"></h2>
                 <div id="formula" class="formula"></div>
@@ -36,22 +46,19 @@
             <button class="btn" id="resetBtn" style="display: none;">Nochmal, das war geil!</button>
         </div>
     </div>
-    
-    <script src="flowchart.js"></script>
-    <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then((reg) => console.log('Service worker registered.', reg))
-        .catch((err) => console.log('Service worker registration failed:', err));
-    });
-  }
-</script>
-
     <footer>
         <a href="rechtliches.html#impressum">Impressum</a> | 
         <a href="rechtliches.html#datenschutz">Datenschutzerklärung</a>
     </footer>
-
+    <script src="flowchart.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((reg) => console.log('Service worker registered.', reg))
+                    .catch((err) => console.log('Service worker registration failed:', err));
+            });
+        }
+    </script>
 </body>
 </html>
