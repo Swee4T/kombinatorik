@@ -1,4 +1,4 @@
-/* style.css */
+/* 1. Imports & Variables */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap');
 
 :root {
@@ -11,8 +11,18 @@
     --light-accent: #6a5acd;
     --light-secondary: #4682b4;
     --light-tertiary: #20b2aa;
+    
+    /* Spacing */
+    --container-padding: 2rem;
+    --content-gap: 2rem;
+    
+    /* Component Sizes */
+    --toggle-size: 2.5rem;
+    --toggle-padding: 0.5rem;
+    --border-radius: 15px;
 }
 
+/* 2. Reset & Base Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -23,12 +33,12 @@ body {
     font-family: 'Share Tech Mono', monospace;
     background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1a2e 100%);
     color: var(--neon-yellow);
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
     padding: 1rem;
     position: relative;
     transition: background 0.3s ease, color 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 body.light-mode {
@@ -36,17 +46,18 @@ body.light-mode {
     color: var(--light-text);
 }
 
+/* 3. Layout & Container */
 .container {
     flex: 1;
-    background: rgba(10, 10, 10, 0.8);
-    border: 2px solid var(--neon-yellow);
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 0 20px rgba(255, 238, 0, 0.5);
+    position: relative;
     max-width: 800px;
     width: calc(100% - 2rem);
-    margin: 1rem auto;
-    position: relative;
+    margin: 4rem auto 1rem;
+    padding: var(--container-padding);
+    background: rgba(10, 10, 10, 0.8);
+    border: 2px solid var(--neon-yellow);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 20px rgba(255, 238, 0, 0.5);
 }
 
 .light-mode .container {
@@ -55,6 +66,7 @@ body.light-mode {
     box-shadow: 0 0 20px rgba(106, 90, 205, 0.3);
 }
 
+/* 4. Typography */
 h1, h2 {
     font-family: 'Orbitron', sans-serif;
     color: var(--neon-yellow);
@@ -75,6 +87,7 @@ h1 {
     margin-bottom: 1rem;
 }
 
+/* 5. Navigation */
 nav {
     text-align: center;
     margin-bottom: 1rem;
@@ -85,6 +98,7 @@ nav .btn {
     margin: 0.25rem;
 }
 
+/* 6. Buttons */
 .btn {
     background: transparent;
     color: var(--neon-cyan);
@@ -115,16 +129,17 @@ nav .btn {
     box-shadow: 0 0 10px var(--light-secondary);
 }
 
+/* 7. Content Section */
 .content-section {
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid var(--neon-green);
-    border-radius: 15px;
+    border-radius: var(--border-radius);
     padding: 2.5rem;
     margin-top: 2rem;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: var(--content-gap);
 }
 
 .light-mode .content-section {
@@ -132,6 +147,7 @@ nav .btn {
     border-color: var(--light-tertiary);
 }
 
+/* 8. Question Styles */
 #questionText {
     color: var(--neon-yellow);
     font-size: 1.5rem;
@@ -149,78 +165,15 @@ nav .btn {
     line-height: 1.5;
 }
 
+/* 9. Button Group */
 .button-group {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-top: 1rem;
 }
 
-.formula {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 1.5em;
-    text-align: center;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid var(--neon-green);
-    border-radius: 10px;
-    margin: 1.5rem 0;
-    color: var(--neon-green);
-    text-shadow: 0 0 5px var(--neon-green);
-}
-
-.light-mode .formula {
-    background: rgba(255, 255, 255, 0.9);
-    border-color: var(--light-tertiary);
-    color: var(--light-text);
-    text-shadow: none;
-}
-
-#calculator input[type="number"] {
-    padding: 0.75rem;
-    border: 1px solid var(--neon-cyan);
-    background: rgba(0, 255, 245, 0.1);
-    color: var(--neon-yellow);
-    border-radius: 4px;
-    margin-right: 0.75rem;
-    font-size: 1rem;
-    width: 80px;
-    font-family: 'Share Tech Mono', monospace;
-}
-
-.light-mode #calculator input[type="number"] {
-    border-color: var(--light-secondary);
-    background: rgba(0, 255, 255, 0.1);
-    color: var(--light-text);
-}
-
-#calculator button {
-    background: transparent;
-    color: var(--neon-green);
-    border: 1px solid var(--neon-green);
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-family: 'Share Tech Mono', monospace;
-    transition: all 0.3s ease;
-}
-
-.light-mode #calculator button {
-    color: var(--light-tertiary);
-    border-color: var(--light-tertiary);
-}
-
-#calculator button:hover, .light-mode #calculator button:hover {
-    background: rgba(0, 255, 0, 0.2);
-    box-shadow: 0 0 10px var(--neon-green);
-}
-
-/* Theme Toggle Component */
+/* 10. Theme Toggle */
 .theme-toggle {
-    --toggle-size: 2.5rem;
-    --toggle-padding: 0.5rem;
-    
     position: fixed;
     top: 1rem;
     right: 1rem;
@@ -230,13 +183,11 @@ nav .btn {
     align-items: center;
     gap: 0.5rem;
     
-    /* Mobile: Nur Icon */
     height: var(--toggle-size);
     width: var(--toggle-size);
     padding: var(--toggle-padding);
     border-radius: 50%;
     
-    /* Styling */
     background: transparent;
     border: 2px solid var(--neon-yellow);
     color: var(--neon-yellow);
@@ -257,13 +208,12 @@ nav .btn {
 }
 
 .theme-toggle__text {
-    display: none; /* Initially hidden on mobile */
+    display: none;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
-/* Light mode styles */
 .light-mode .theme-toggle {
     border-color: var(--light-accent);
     color: var(--light-accent);
@@ -274,7 +224,32 @@ nav .btn {
     box-shadow: 0 0 10px rgba(106, 90, 205, 0.3);
 }
 
-/* Tablet+ styles */
+.theme-toggle:hover .theme-toggle__icon {
+    transform: rotate(-15deg);
+}
+
+/* 11. Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+footer a {
+    color: var(--neon-yellow);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.light-mode footer a {
+    color: var(--light-accent);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* 12. Media Queries */
 @media (min-width: 768px) {
     .theme-toggle {
         width: auto;
@@ -287,7 +262,27 @@ nav .btn {
     }
 }
 
-/* Hover animation */
-.theme-toggle:hover .theme-toggle__icon {
-    transform: rotate(-15deg);
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 1rem;
+        --content-gap: 1.5rem;
+    }
+    
+    body {
+        padding: 0.5rem;
+    }
+    
+    .container {
+        width: calc(100% - 1rem);
+        margin: 3rem auto 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
 }
