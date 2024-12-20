@@ -20,51 +20,62 @@
     <div class="container">
         <h1>Kombinatorik</h1>
         <nav>
-    		<a href="index.html" class="btn">Rechner</a>
-    		<a href="info.html" class="btn">Info</a>
-    		<a href="cheatsheet.html" class="btn active">Cheatsheet</a>
-		</nav>
+            <a href="index.html" class="btn">Rechner</a>
+            <a href="info.html" class="btn">Info</a>
+            <a href="cheatsheet.html" class="btn active">Cheatsheet</a>
+        </nav>
         <div class="content-section">
             <h2>Übersicht der kombinatorischen Konzepte</h2>
-            <div class="table-container">
-                <table class="cheatsheet-table">
-                    <tr>
-                        <th>Konzept</th>
-                        <th>Formel</th>
-                        <th>Beschreibung</th>
-                        <th>Beispiel</th>
-                    </tr>
-                    <tr>
-                        <td data-label="Konzept">Variation mit Wiederholung</td>
-                        <td data-label="Formel">\( n^k \)</td>
-                        <td data-label="Beschreibung">Auswahl von k aus n mit Reihenfolge und Wiederholung</td>
-                        <td data-label="Beispiel">4-stelliger PIN-Code (n=10, k=4)</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Konzept">Variation ohne Wiederholung</td>
-                        <td data-label="Formel">\( \frac{n!}{(n-k)!} \)</td>
-                        <td data-label="Beschreibung">Auswahl von k aus n mit Reihenfolge, ohne Wiederholung</td>
-                        <td data-label="Beispiel">Podiumsplätze bei 10 Läufern (n=10, k=3)</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Konzept">Kombination mit Wiederholung</td>
-                        <td data-label="Formel">\( \binom{n+k-1}{k} \)</td>
-                        <td data-label="Beschreibung">Auswahl von k aus n ohne Reihenfolge, mit Wiederholung</td>
-                        <td data-label="Beispiel">3 Eiskugeln aus 5 Sorten (n=5, k=3)</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Konzept">Kombination ohne Wiederholung</td>
-                        <td data-label="Formel">\( \binom{n}{k} \)</td>
-                        <td data-label="Beschreibung">Auswahl von k aus n ohne Reihenfolge und Wiederholung</td>
-                        <td data-label="Beispiel">3 aus 10 Personen auswählen (n=10, k=3)</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Konzept">Permutation</td>
-                        <td data-label="Formel">\( n! \)</td>
-                        <td data-label="Beschreibung">Anordnung von n Elementen</td>
-                        <td data-label="Beispiel">Anordnung von 5 Personen (n=5)</td>
-                    </tr>
-                </table>
+            <div class="cheatsheet-grid">
+                <!-- Variation mit Wiederholung -->
+                <div class="concept-card">
+                    <h3 class="concept-card__title">Variation mit Wiederholung</h3>
+                    <div class="concept-card__formula">\( n^k \)</div>
+                    <div class="concept-card__description">
+                        <p>Auswahl von k aus n mit Reihenfolge und Wiederholung</p>
+                        <p class="concept-card__example">Beispiel: 4-stelliger PIN-Code (n=10, k=4)</p>
+                    </div>
+                </div>
+
+                <!-- Variation ohne Wiederholung -->
+                <div class="concept-card">
+                    <h3 class="concept-card__title">Variation ohne Wiederholung</h3>
+                    <div class="concept-card__formula">\( \frac{n!}{(n-k)!} \)</div>
+                    <div class="concept-card__description">
+                        <p>Auswahl von k aus n mit Reihenfolge, ohne Wiederholung</p>
+                        <p class="concept-card__example">Beispiel: Podiumsplätze bei 10 Läufern (n=10, k=3)</p>
+                    </div>
+                </div>
+
+                <!-- Kombination mit Wiederholung -->
+                <div class="concept-card">
+                    <h3 class="concept-card__title">Kombination mit Wiederholung</h3>
+                    <div class="concept-card__formula">\( \binom{n+k-1}{k} \)</div>
+                    <div class="concept-card__description">
+                        <p>Auswahl von k aus n ohne Reihenfolge, mit Wiederholung</p>
+                        <p class="concept-card__example">Beispiel: 3 Eiskugeln aus 5 Sorten (n=5, k=3)</p>
+                    </div>
+                </div>
+
+                <!-- Kombination ohne Wiederholung -->
+                <div class="concept-card">
+                    <h3 class="concept-card__title">Kombination ohne Wiederholung</h3>
+                    <div class="concept-card__formula">\( \binom{n}{k} \)</div>
+                    <div class="concept-card__description">
+                        <p>Auswahl von k aus n ohne Reihenfolge und Wiederholung</p>
+                        <p class="concept-card__example">Beispiel: 3 aus 10 Personen auswählen (n=10, k=3)</p>
+                    </div>
+                </div>
+
+                <!-- Permutation -->
+                <div class="concept-card">
+                    <h3 class="concept-card__title">Permutation</h3>
+                    <div class="concept-card__formula">\( n! \)</div>
+                    <div class="concept-card__description">
+                        <p>Anordnung von n Elementen</p>
+                        <p class="concept-card__example">Beispiel: Anordnung von 5 Personen (n=5)</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
