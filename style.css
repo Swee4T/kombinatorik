@@ -214,28 +214,23 @@ nav .btn {
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.3);
     display: grid;
-    grid-template-areas:
-        "title"
-        "."
-        "formula"
-        "."
-        "description"
-        "."
-        "example";
-    grid-template-rows: auto 2rem auto 2rem auto 2rem auto;
+    grid-template-rows: 4rem auto 1fr auto; /* Fixed height for title */
+    gap: 2rem;
     align-items: start;
 }
 
 .concept-card__title {
-    grid-area: title;
     color: #8A7CFF;
     font-size: 1.4rem;
     font-weight: normal;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4rem; /* Match grid-template-rows first value */
 }
 
 .concept-card__formula {
-    grid-area: formula;
     border: 2px solid var(--neon-cyan);
     border-radius: 10px;
     padding: 1rem;
@@ -246,16 +241,15 @@ nav .btn {
 }
 
 .concept-card__description {
-    grid-area: description;
     color: var(--neon-yellow);
     text-align: center;
 }
 
 .concept-card__example {
-    grid-area: example;
     color: var(--neon-yellow);
     font-style: italic;
     text-align: center;
+    min-height: 4rem; /* Match grid-template-rows first value */
     opacity: 0.8;
 }
 
