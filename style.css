@@ -127,18 +127,77 @@ nav .btn {
     box-shadow: 0 0 10px var(--light-secondary);
 }
 
-/* 6. Content Section */
+/* 6. Content Section (Rechner & Info) */
 .content-section {
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid var(--neon-green);
     border-radius: var(--border-radius);
     padding: 2.5rem;
     margin-top: 2rem;
+    text-align: center;
 }
 
 .light-mode .content-section {
     background: rgba(255, 255, 255, 0.8);
     border-color: var(--light-tertiary);
+}
+
+#questionText {
+    color: var(--neon-yellow);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px var(--neon-yellow);
+}
+
+#questionDescription {
+    margin-bottom: 2rem;
+}
+
+/* Calculator Styles */
+.calculator {
+    margin-top: 2rem;
+}
+
+.calculator input[type="number"] {
+    padding: 0.75rem;
+    border: 1px solid var(--neon-cyan);
+    background: rgba(0, 255, 245, 0.1);
+    color: var(--neon-yellow);
+    border-radius: 4px;
+    margin-right: 0.75rem;
+    font-size: 1rem;
+    width: 80px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.calculator button {
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Share Tech Mono', monospace;
+    transition: all 0.3s ease;
+}
+
+.calculator button:hover {
+    background: rgba(0, 255, 0, 0.2);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.formula {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--neon-green);
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
 }
 
 /* 7. Cheatsheet Grid & Cards */
@@ -155,23 +214,28 @@ nav .btn {
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.3);
     display: grid;
-    grid-template-rows: 4rem auto 1fr auto; /* Fixed height for title */
-    gap: 2rem;
+    grid-template-areas:
+        "title"
+        "."
+        "formula"
+        "."
+        "description"
+        "."
+        "example";
+    grid-template-rows: auto 2rem auto 2rem auto 2rem auto;
     align-items: start;
 }
 
 .concept-card__title {
+    grid-area: title;
     color: #8A7CFF;
     font-size: 1.4rem;
     font-weight: normal;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 4rem; /* Match grid-template-rows first value */
 }
 
 .concept-card__formula {
+    grid-area: formula;
     border: 2px solid var(--neon-cyan);
     border-radius: 10px;
     padding: 1rem;
@@ -182,15 +246,16 @@ nav .btn {
 }
 
 .concept-card__description {
+    grid-area: description;
     color: var(--neon-yellow);
     text-align: center;
 }
 
 .concept-card__example {
+    grid-area: example;
     color: var(--neon-yellow);
     font-style: italic;
     text-align: center;
-    min-height: 4rem; /* Match grid-template-rows first value */
     opacity: 0.8;
 }
 
